@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apply Now - ICSTHM 2025</title>
+  <style>
+    :root {
+      --primary-color: #003366;
+      --accent-color: #0055aa;
+     
+      --white: #ffffff;
+      --text-dark: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: url('images/library-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #111;
+}
+
+.overlay {
+ /* soft white overlay */
+  min-height: 100vh;
+  padding: 20px;
+}
+ /* Apply transparency & blur to main content areas */
+  header, footer {
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    backdrop-filter: blur(8px); /* Adds soft blur behind content */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    padding: 0px;
+    margin: 0px;
+    border-radius: 12px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Optional soft shadow */
+  }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+   
+  header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* stays on top */
+    background-color: rgba(0, 51, 102, 0.8); /* transparent blue */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  header img {
+    height: 60px;
+    margin-right: 15px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    margin: 0;
+  }
+      @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      header img {
+        margin-bottom: 10px;
+      }
+      }
+     .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    }
+
+     nav {
+     display: flex;
+     gap: 10px;
+     border-radius: 150px;
+    }
+
+
+    nav a {
+      display: inline-block;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
+      transition: all 0.3s ease;
+      border-radius: 150px;
+    }
+
+    nav a:hover {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0, 114, 255, 0.5);
+      color: #ffcc00;
+      border-radius: 150px;
+    }
+    main {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p, ul {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .form-button-container {
+      text-align: center;
+    }
+
+    .form-button-container a {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s ease;
+    }
+
+    .form-button-container a:hover {
+      background-color: var(--accent-color);
+    }
+
+    .qr-image {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 300px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    form input,
+    form select,
+    form button {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    form button {
+      background-color: var(--primary-color);
+      color: var(--white);
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: var(--accent-color);
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 16px;
+      font-size: 14px;
+      position: relative;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-top: 10px;
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+<body> 
+
+ <header>
+  <div class="header-content">
+    <div style="display: flex; align-items: center;">
+      <img src="images/logo1.png" alt="ICSTHM Logo">
+      <h1>ICSTHM 2025</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="apply.html">Apply Now</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+
+     <!-- Step 1: Payment -->
+    <section>
+      <h2>Step 1: Make Your Payment</h2>
+      <p>Scan the QR code below using any UPI app to complete your payment. Make sure to note down the UPI transaction reference number.</p>
+      <ul>
+        <li><strong>Students / Researchers:</strong> ₹1500</li>
+        <li><strong>Faculty / Academicians:</strong> ₹3000</li>
+        <li><strong>Industry Professionals:</strong> ₹5000</li>
+      </ul>
+      <img src="images/UPI Payment 1.png" alt="UPI QR Code" class="qr-image">
+    </section>
+
+
+    
+    
+</section>
+
+     <!-- Step 3: Google Form Link -->
+    <section>
+      <h2>Step 3: Fill the Application Form</h2>
+      <p>Please fill out the application form using the link below. Ensure that all details are accurate and documents are uploaded as instructed.</p>
+      <div class="form-button-container">
+        <a href="https://forms.gle/igdJTNLs8fZQh7998" target="_blank">Fill Your Application Here</a>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer>
+    &copy; 2025 ICSTHM. All rights reserved.
+  </footer>
+
+</body>
+</html>

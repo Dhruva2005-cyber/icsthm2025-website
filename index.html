@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ICSTHM 2025 - Apply</title>
+  <style>
+
+  body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: url('images/library-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #111;
+}
+
+.overlay {
+ /* soft white overlay */
+  min-height: 100vh;
+  padding: 20px;
+}
+ /* Apply transparency & blur to main content areas */
+  header, footer {
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    backdrop-filter: blur(8px); /* Adds soft blur behind content */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    padding: 0px;
+    margin: 0px;
+    border-radius: 12px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Optional soft shadow */
+  }
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+  header {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* stays on top */
+    background-color: rgba(0, 51, 102, 0.8); /* transparent blue */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  header img {
+    height: 60px;
+    margin-right: 15px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    margin: 0;
+  }
+      @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      header img {
+        margin-bottom: 10px;
+      }
+      }
+     .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    }
+
+     nav {
+     display: flex;
+     gap: 10px;
+     border-radius: 150px;
+    }
+
+
+    nav a {
+      display: inline-block;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
+      transition: all 0.3s ease;
+      border-radius: 150px;
+    }
+
+    nav a:hover {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0, 114, 255, 0.5);
+      color: #ffcc00;
+      border-radius: 150px;
+    }
+
+  .marquee-container {
+  color: #000;
+  font-weight: bold;
+  padding: 15px 0;
+  font-size: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px; /* space below marquee */
+  z-index: 2;
+  position: relative;
+}
+
+    marquee {
+      font-size: 30px;
+      margin-bottom: 15px; /* space below marquee */
+      z-index: 2;
+      position: relative;
+}
+    /* Main Layout */
+    main {
+      padding: 60px 10% 20px 10%;
+      border-radius: 15px;
+      padding-top: 120px;
+    }
+    main, .content, body {
+    padding-top: 80px; /* Adjust based on your header height */
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+.circle svg {
+  transform: rotate(-90deg);
+}
+
+.circle circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.circle .bg {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+
+.circle .progress {
+  stroke: #00aaff;
+  transition: stroke-dashoffset 0.5s linear;
+}
+
+.circle.orange .progress {
+  stroke: #ff6600;
+}
+
+.circle.yellow .progress {
+  stroke: #ffc107;
+}
+
+.circle .time-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.circle .label {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  color: white;
+}
+
+    section {
+      margin-bottom: 60px;
+      background-color: white;
+      box-sizing: 10px;
+      padding: 30px;
+      border-left: 6px solid red;
+      border-radius: 8px;
+     
+      border-radius: 12px;
+    }
+
+    section h2 {
+      margin-bottom: 15px;
+      color: #003366;
+      font-size: 24px;
+      border-radius: 12px;
+    }
+
+    p, li {
+      font-size: 16px;
+      border-radius: 150px;
+    }
+
+    ul {
+      padding-left: 25px;
+      margin-top: 10px;
+      border-radius: 150px;
+    }
+
+    /* Apply Now CTA */
+    .apply-section {
+      margin-bottom: 60px;
+     
+      padding: 30px;
+      border-left: 6px solid red;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .apply-section h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #003366;
+      border-radius: 150px;
+    }
+
+    .apply-section p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #444;
+      border-radius: 150px;
+    }
+
+    .new-apply-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      padding: 16px 32px;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .new-apply-btn:hover {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0, 114, 255, 0.5);
+      border-radius: 150px;
+    }
+    #committee {
+  padding: 50px 10%;
+  margin-top: 40px;
+  border-top: 3px solid #003366;
+}
+
+.committee-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #005599;
+  border-bottom: 2px dashed #ccc;
+  padding-bottom: 5px;
+}
+
+.committee-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.member-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+}
+
+.member-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.member-card .name {
+  font-weight: bold;
+  color: #003366;
+  margin-top: 10px;
+}
+
+.member-card .role {
+  font-size: 14px;
+  color: #666;
+}
+/* Footer */
+  footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+</style>
+</head>
+<body>
+<body>
+  <div class="overlay">
+    <header>
+  <div class="header-content">
+    <div style="display: flex; align-items: center;">
+      <img src="images/logo1.png" alt="ICSTHM Logo">
+      <h1>ICSTHM 2025</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#about us">About Us</a>
+      <a href="#registration">Registration</a>
+      <a href="#themes">Themes</a>
+      <a href="#committee">Committee</a>
+      <a href="apply.html">Apply Now</a>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- Marquee -->
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left">
+    📢 Last Date to Apply: 01st August 2025 | 📅 Event Date: 15th & 16th August 2025 | 🏃‍♂️ Hurry Up and Apply Now!</marquee>
+ 
+ <!-- Countdown Timer Section -->
+<div style="background-color: rgba(0, 51, 102, 0.8); padding: 30px 0; color: white;  border-radius: 50px;">
+  <h2 style="text-align: center; font-size: 28px;margin-bottom: 20px;">
+  🎓International Conference on Synergising Thought and Technology in Humanities, and Management 🎓Registrations Closes Soon</h2>
+
+  <div class="countdown-container" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+    <div class="circle blue" id="hour-circle">
+      <svg width="120" height="120">
+        <circle class="bg" cx="60" cy="60" r="50" />
+        <circle class="progress" cx="60" cy="60" r="50" />
+      </svg>
+      <div class="time-value" id="hours">00</div>
+      <div class="label">HOURS</div>
+    </div>
+    <div class="circle orange" id="minute-circle">
+      <svg width="120" height="120">
+        <circle class="bg" cx="60" cy="60" r="50" />
+        <circle class="progress" cx="60" cy="60" r="50" />
+      </svg>
+      <div class="time-value" id="minutes">00</div>
+      <div class="label">MINUTES</div>
+    </div>
+    <div class="circle yellow" id="second-circle">
+      <svg width="120" height="120">
+        <circle class="bg" cx="60" cy="60" r="50" />
+        <circle class="progress" cx="60" cy="60" r="50" />
+      </svg>
+      <div class="time-value" id="seconds">00</div>
+      <div class="label">SECONDS</div>
+    </div>
+  </div>
+
+  <div id="expired" class="expired-msg" style="text-align:center; font-weight: bold; margin-top: 20px; font-size: 18px;"></div>
+
+  <!-- Optional event details -->
+  <p style="text-align:center; font-size: 16px; margin-top: 25px;">
+    <strong>Location:</strong> Manyata Tech Park, Bengaluru &nbsp; | &nbsp; 📅 <strong>Event Date:</strong> 15th–16th Aug 2025 &nbsp; | &nbsp; 📝 <strong>Deadline:</strong> 01st Aug 2025
+  </p>
+</div>
+
+
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        The <strong>International Conference on Synergising Thought and Technology in Humanities and Management (ICSTHM)</strong> aims to explore how the intersection of humanistic insights and technological innovation is shaping the future of leadership, education, business, and society.
+        <br><br>
+        With experts from across the globe, ICSTHM 2025 promises deep academic discussions, industry collaborations, and impactful takeaways.
+      </p>
+    </section>
+
+    <section id="registration">
+      <h2>Registration Details</h2>
+      <p>Register in the category that best describes you:</p>
+      <ul>
+        <li><strong>Faculty / Academicians:</strong> ₹3000</li>
+        <li><strong>Students / Researchers:</strong> ₹1500</li>
+        <li><strong>Industry Professionals:</strong> ₹5000</li>
+      </ul>
+      <p><strong>What’s Included:</strong> Access to all conference sessions, keynote talks, digital materials, refreshments, and an official participation certificate.</p>
+    </section>
+
+    <section id="themes">
+      <h2>Conference Themes</h2>
+      <ul>
+        <li>Digital Humanities and Artificial Intelligence</li>
+        <li>Technology Integration in Teaching and Learning</li>
+        <li>Cognitive Technologies in HRM</li>
+        <li>Innovation and Tech-driven Entrepreneurship</li>
+        <li>Socio-technical Systems and Organizational Development</li>
+        <li>Cross-cultural Communication and Globalization</li>
+        <li>Ethics, Philosophy, and AI</li>
+        <li>Leadership, Sustainability, and Technological Innovation</li>
+      </ul>
+    </section>
+    <section class="apply-section">
+    <h2>Ready to Participate?</h2>
+    <p>Click below to submit your application form. Make sure to upload required documents as per instructions.</p>
+    <a href="apply.html" target="_blank" class="new-apply-btn">Go to Application Form</a>
+  </section>
+
+  <section id="committee">
+  <h2 style="text-align: center; font-size: 28px; margin-bottom: 30px; color: #003366;">Organizing Committees</h2>
+
+  <!-- Chief Guest -->
+  <div class="committee-department">
+    <h3 class="committee-title">Chief Guest</h3>
+    <div class="committee-grid">
+      <div class="member-card">
+        <img src="images/bikrama.jpg" alt="Chief Guest">
+        <p class="name">Dr. A. P. Sharma</p>
+        <p class="role">Vice Chancellor, XYZ University</p>
+      </div>
+      <div class="member-card">
+        <img src="images/narendra.jpg" alt="Advisor">
+        <p class="name">Dr. Renu Mehra</p>
+        <p class="role">Senior Advisor</p>
+      </div>
+      <div class="member-card">
+        <img src="images/miguil.jpg" alt="Member">
+        <p class="name">Prof. Sunita Rao</p>
+        <p class="role">Convener</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advisory Committee -->
+  <div class="committee-department">
+    <h3 class="committee-title">Advisory Committee</h3>
+    <div class="committee-grid">
+      <div class="member-card">
+        <img src="images/narendra.jpg" alt="Advisor">
+        <p class="name">Dr. Renu Mehra</p>
+        <p class="role">Senior Advisor</p>
+      </div>
+      <div class="member-card">
+        <img src="images/aartisrivastava.jpg" alt="Advisor">
+        <p class="name">Dr. Farhan Ali</p>
+        <p class="role">Policy Advisor</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizing Committee -->
+  <div class="committee-department">
+    <h3 class="committee-title">Organizing Committee</h3>
+    <div class="committee-grid">
+      <div class="member-card">
+        <img src="images/miguil.jpg" alt="Member">
+        <p class="name">Prof. Sunita Rao</p>
+        <p class="role">Convener</p>
+      </div>
+      <div class="member-card">
+        <img src="images/camille.jpg" alt="Member">
+        <p class="name">Dr. Rajesh Kumar</p>
+        <p class="role">Co-Convener</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Program Committee -->
+  <div class="committee-department">
+    <h3 class="committee-title">Program Committee</h3>
+    <div class="committee-grid">
+      <div class="member-card">
+        <img src="images/debananda.jpg" alt="Program Chair">
+        <p class="name">Dr. Nidhi Verma</p>
+        <p class="role">Chairperson</p>
+      </div>
+      <div class="member-card">
+        <img src="images/ankursarin.jpg" alt="Co-Chair">
+        <p class="name">Prof. Amit Joshi</p>
+        <p class="role">Co-Chair</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Technical Committee -->
+  <div class="committee-department">
+    <h3 class="committee-title">Technical Committee</h3>
+    <div class="committee-grid">
+      <div class="member-card">
+        <img src="images/mansi.jpg" alt="Technical Member">
+        <p class="name">Dr. Anjali Desai</p>
+        <p class="role">Lead Developer</p>
+      </div>
+      <div class="member-card">
+        <img src="images/proffazal.jpg" alt="Technical Member">
+        <p class="name">Mr. Ravi Singh</p>
+        <p class="role">System Admin</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Faculty Coordinators -->
+  <div class="committee-department">
+    <h3 class="committee-title">Faculty Coordinators</h3>
+    <div class="committee-grid">
+      <div class="member-card">
+        <img src="images/pankajchandra.jpg" alt="Faculty">
+        <p class="name">Ms. Preeti Jain</p>
+        <p class="role">Faculty, BCA Dept.</p>
+      </div>
+      <div class="member-card">
+        <img src="images/rathinbiswas.jpg" alt="Faculty">
+        <p class="name">Mr. Karthik R</p>
+        <p class="role">Faculty, BBA Dept.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+
+  <footer>
+    &copy; 2025 ICSTHM | Designed & Devloped by Dhruva Raj K M
+  </footer>
+
+    
+  <script>
+  const FULL_DASH = 2 * Math.PI * 50;
+
+  const deadline = new Date("August 15, 2025 23:59:59");
+
+  const hourCircle = document.querySelector('#hour-circle .progress');
+  const minuteCircle = document.querySelector('#minute-circle .progress');
+  const secondCircle = document.querySelector('#second-circle .progress');
+
+  hourCircle.setAttribute('stroke-dasharray', FULL_DASH);
+  minuteCircle.setAttribute('stroke-dasharray', FULL_DASH);
+  secondCircle.setAttribute('stroke-dasharray', FULL_DASH);
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = deadline - now;
+
+    if (diff <= 0) {
+      document.querySelector("#hours").innerText = "00";
+      document.querySelector("#minutes").innerText = "00";
+      document.querySelector("#seconds").innerText = "00";
+      document.getElementById("expired").innerText = "⚠️ This Offer Has Expired!";
+      return;
+    }
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.querySelector("#hours").innerText = String(hours).padStart(2, '0');
+    document.querySelector("#minutes").innerText = String(minutes).padStart(2, '0');
+    document.querySelector("#seconds").innerText = String(seconds).padStart(2, '0');
+
+    hourCircle.setAttribute('stroke-dashoffset', FULL_DASH * (1 - (hours % 24) / 24));
+    minuteCircle.setAttribute('stroke-dashoffset', FULL_DASH * (1 - (minutes / 60)));
+    secondCircle.setAttribute('stroke-dashoffset', FULL_DASH * (1 - (seconds / 60)));
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+</div>
+</body>
+</html>
